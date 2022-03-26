@@ -22,5 +22,8 @@ Finalizado!
 <img src="images/moeda_nao_suportada.png">
 <img src="images/dolar_para_real.png">
 
+## Site utilizado para extração de dados da cotação
+https://pt.exchange-rates.org/
+
 ## Autor
 Feito por Gilson Kedson.

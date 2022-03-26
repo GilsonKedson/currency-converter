@@ -9,9 +9,13 @@ class ConverterViewSet(APIView):
     ACCEPTED_CURRENCIES = ['USD','EUR', 'BRL']
     
     def get(self, request, format=None):
-        currency_base = request.GET.get('currency_base').upper()
-        currency_secondary = request.GET.get('currency_secondary').upper()
+        currency_base = request.GET.get('currency_base')
+        currency_secondary = request.GET.get('currency_secondary')
         amount = request.GET.get('amount')
+        
+        if currency_base and currency_secondary:
+            currency_base = currency_base.upper()
+            currency_secondary = currency_secondary.upper()
 
         if not currency_base or not currency_secondary or not amount:
             return Response("Parâmetros de conversão não foram passados.", status=status.HTTP_204_NO_CONTENT)
